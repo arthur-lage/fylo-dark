@@ -97,6 +97,8 @@ main .hero .hero__get-started {
   color: var(--white);
   font-size: 1.6rem;
   border-radius: 50rem;
+  transition: 0.2s ease;
+  cursor: pointer;
   padding: 1.5rem;
   width: 25rem;
   letter-spacing: 0.08rem;
@@ -104,6 +106,10 @@ main .hero .hero__get-started {
   font-weight: 700;
   font-family: "Raleway", sans-serif;
   background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+}
+
+main .hero .hero__get-started:hover {
+  filter: brightness(1.3);
 }
 
 main .benefits {
@@ -178,6 +184,14 @@ main .stay-productive .stay-productive__cta {
   font-family: "Open Sans", sans-serif;
   align-items: center;
   gap: 0.5rem;
+}
+
+main .stay-productive .stay-productive__cta:hover {
+  color: var(--white);
+}
+
+main .stay-productive .stay-productive__cta:hover::after {
+  background: var(--white);
 }
 
 main .stay-productive .stay-productive__cta::after {
@@ -289,7 +303,7 @@ main .early-access .input {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
@@ -301,17 +315,36 @@ main .early-access .input input {
   border: 0;
 }
 
-main .early-access .input button {
+main .early-access .early-access__error {
+  display: none;
+  color: hsl(0, 100%, 63%);
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+}
+
+main .early-access .input-wrapper.error .early-access__error {
+  display: block;
+}
+
+main .early-access .submit button {
   width: 100%;
   color: var(--white);
+  margin-top: 1.5rem;
   font-size: 1.6rem;
   border-radius: 50rem;
   padding: 1.5rem;
   letter-spacing: 0.08rem;
   border: 0;
   font-weight: 700;
+  transition: 0.2s ease;
+  cursor: pointer;
   font-family: "Raleway", sans-serif;
   background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+}
+
+main .early-access .submit button:hover {
+  filter: brightness(1.3);
 }
 
 footer {
@@ -394,6 +427,12 @@ footer .links ul li a {
   font-family: "Open Sans", sans-serif;
   color: var(--white);
   font-size: 1.7rem;
+  opacity: 0.85;
+}
+
+footer .links ul li a:hover {
+  font-weight: 700;
+  opacity: 1;
 }
 
 footer .social-media {
@@ -414,16 +453,142 @@ footer .social-media a {
   justify-content: center;
 }
 
+footer .social-media a:hover {
+  border: 1px solid hsl(176, 68%, 64%);
+}
+
+footer .social-media a:hover i {
+  color: hsl(176, 68%, 64%);
+}
+
 footer .social-media a i {
   font-size: 2rem;
   color: var(--white);
 }
 
+.attribution-wrapper {
+  margin-top: 5rem;
+  padding-bottom: 3rem;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  text-decoration: underline;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  header a img {
+    width: 10rem;
+  }
+
+  main .hero .hero__title {
+    max-width: 45rem;
+    font-size: 2.4rem;
+  }
+
+  main .hero .hero__description {
+    max-width: 55rem;
+    font-size: 1.8rem;
+  }
+
+  main .benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+  }
+
+  main .stay-productive {
+    flex-direction: row;
+    gap: 3rem;
+    max-width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main .stay-productive .stay-productive__image {
+    width: 35rem;
+  }
+
+  main .testimonials {
+    flex-direction: row;
+  }
+
+  main .early-access {
+    max-width: 80vw;
+  }
+
+  main .early-access .input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  main .early-access .input-wrapper .input {
+    width: 100%;
+  }
+
+  main .early-access .input-wrapper .input input {
+    width: 100%;
+  }
+
+  main .early-access .input-wrapper .submit {
+    width: 35rem;
+  }
+
+  main .early-access .input-wrapper .submit button {
+    margin: 0;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  footer .footer__main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  footer .contact {
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+
+  footer .links {
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+
+  footer .social-media {
+    margin-top: 0;
+    margin-left: 3rem;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  header a img {
+    width: 6.5rem;
+  }
+
+  header ul li a {
+    font-size: 1.4rem;
+  }
+
+  main .hero .hero__description {
+    max-width: 30rem;
+  }
+
+  main .benefit .benefit__description {
+    max-width: 30rem;
+  }
 }
